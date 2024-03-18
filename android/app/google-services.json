@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "192275732807",
+    "project_id": "foodevenproject",
+    "storage_bucket": "foodevenproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192275732807:android:ed61c8fbe93fffda9d9462",
+        "android_client_info": {
+          "package_name": "com.example.foodevenproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcAEB2HTeSyEIRmT8zhgvEDSmB3U7AOW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
