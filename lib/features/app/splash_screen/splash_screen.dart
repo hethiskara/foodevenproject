@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   final Widget? child;
@@ -11,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    checkUserLoggedIn();
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(
           context,
@@ -18,6 +21,15 @@ class _SplashScreenState extends State<SplashScreen> {
           (route) => false);
     });
     super.initState();
+  }
+
+  void checkUserLoggedIn() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (FirebaseAuth.instance.currentUser != null &&
+        prefs.getBool('loggedIn') == true) {
+      // User is already logged in, navigate to the main screen
+      Navigator.pushReplacementNamed(context, "/bottomnav");
+    }
   }
 
   @override
